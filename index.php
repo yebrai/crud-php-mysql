@@ -35,7 +35,8 @@
       </tr>
     </thead>
     <tbody>
-    <th></th>
+      <tr>
+            <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -44,6 +45,8 @@
 
     <th><a href="">Editar</a></th>
     <th><a href="">Eliminar</a></th>
+      </tr>
+
   </tbody>
   </table>
       </div>
