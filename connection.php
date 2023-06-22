@@ -1,20 +1,19 @@
-<?php 
+<?php
 
-function connection() {
+function connection(){
     $host = "localhost";
     $user = "root";
     $pass = "";
 
-    $db = "users_crud_php";
+    $bd = "users_crud_php";
 
-    $connect = mysqli_connect($host, $user, $pass);
+    $connect=mysqli_connect($host, $user, $pass);
 
-    mysqli_select_db($connect, $db);
+    mysqli_select_db($connect, $bd);
 
     return $connect;
 
 }
-
 
 
 ?>
