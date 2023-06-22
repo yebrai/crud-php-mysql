@@ -1,3 +1,14 @@
+<?php
+
+include('connection.php');
+
+$con = connection();
+$sql = "SELECT * FROM users";
+$query = mysqli_query($con, $sql)
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +18,7 @@
 </head>
 <body>
   <div>
-    <form action="">
+    <form action="inser_user.php" method="POST">
       <h1>Crear usuario</h1>
 
       <input type="text" name="name" placeholder="Nombre">
@@ -35,18 +46,22 @@
       </tr>
     </thead>
     <tbody>
+      <?php
+      //We use while to acces to every file
+      //With ":" I can end the while with endwhile and omit the typical "{}"
+      while($row = mysqli_fetch_array($query)): ?>
       <tr>
             <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><?= $row['id'] ?></th>
+    <th><?= $row['name'] ?></th>
+    <th><?= $row['lastname'] ?></th>
+    <th><?= $row['username'] ?></th>
+    <th><?= $row['email'] ?></th>
 
     <th><a href="">Editar</a></th>
     <th><a href="">Eliminar</a></th>
       </tr>
-
+      <?php endwhile; ?>
   </tbody>
   </table>
       </div>
